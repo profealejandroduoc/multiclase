@@ -2,6 +2,8 @@ package com.ejemplo.multiclase.model;
 
 import java.util.List;
 
+import com.fasterxml.jackson.annotation.JsonManagedReference;
+
 import jakarta.persistence.CascadeType;
 import jakarta.persistence.Column;
 import jakarta.persistence.Entity;
@@ -31,6 +33,8 @@ public class Artista {
     private String nombre;
 
     @OneToMany(mappedBy = "artista", cascade = CascadeType.ALL, orphanRemoval = true )
+    @JsonManagedReference // Aquí se maneja la serialización
+
     private List<Album> discografia;
     
 }

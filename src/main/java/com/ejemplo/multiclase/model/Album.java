@@ -1,5 +1,7 @@
 package com.ejemplo.multiclase.model;
 
+import com.fasterxml.jackson.annotation.JsonBackReference;
+
 import jakarta.persistence.Column;
 import jakarta.persistence.Entity;
 import jakarta.persistence.GeneratedValue;
@@ -32,6 +34,7 @@ public class Album {
 
     @ManyToOne()
     @JoinColumn(name = "id_artista" )
+    @JsonBackReference // Aquí se evita la serialización en la parte "muchos"
     private Artista artista;
 
 }
