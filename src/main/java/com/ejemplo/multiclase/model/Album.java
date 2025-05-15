@@ -9,7 +9,6 @@ import jakarta.persistence.GenerationType;
 import jakarta.persistence.Id;
 import jakarta.persistence.JoinColumn;
 import jakarta.persistence.ManyToOne;
-import jakarta.persistence.OneToMany;
 import jakarta.persistence.Table;
 import lombok.AllArgsConstructor;
 import lombok.Data;
@@ -30,7 +29,7 @@ public class Album {
     private String titulo;
 
     @Column(nullable = false)
-    private int year_pubicacion;
+    private int year_publicacion;
 
     @ManyToOne()
     @JoinColumn(name = "id_artista" )

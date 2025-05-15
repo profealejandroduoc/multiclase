@@ -1,7 +1,7 @@
 package com.ejemplo.multiclase.controller;
 
 import java.util.List;
-import java.util.Optional;
+
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;
@@ -25,6 +25,7 @@ import org.springframework.web.bind.annotation.RequestBody;
 public class AlbumController {
     @Autowired
     private AlbumService albumService;
+    
     @Autowired
     private ArtistaService artistaService;
 
@@ -41,7 +42,7 @@ public class AlbumController {
     @PostMapping
     public ResponseEntity<Album> postAlbum(@RequestBody Album album) {
         int id_link=album.getArtista().getId_artista();
-        System.out.println("ID A VINCULAR: " + id_link);
+       
         Artista artista=artistaService.artistaxId(id_link);
         if (artista!=null)
         {
